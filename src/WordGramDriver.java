@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class WordGramDriver {
-	public final static int WSIZE = 3;
+	public final static int WSIZE = 10;
 
 	public static int benchmark(Set<WordGram> set, String filename) throws FileNotFoundException {
 		Scanner scan = new Scanner(new File(filename));
@@ -79,6 +79,8 @@ public class WordGramDriver {
 
 		System.out.printf("\nbenchmarkShift time: %1.3f, size = %d\n",time,hset2.size());
 		System.out.printf("total # wgs = %d\n",total);
+		int lastInt = total - hset2.size();
+		System.out.println(lastInt);
 		
 		HashSet<WordGram> copy = new HashSet<>(hset);
 		HashSet<WordGram> copy2 = new HashSet<>(hset2);

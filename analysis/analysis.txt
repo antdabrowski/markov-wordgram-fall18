@@ -1,4 +1,4 @@
-YOUR NAME and YOUR NETID
+Antoni Dabrowski amd146
 
 Run WordGramDiver for wordgrams of size 2-10 and record
 the number of WordGram values/objects that occur more than
@@ -15,12 +15,13 @@ values of WSIZE
 WSIZE    # duplicates
 2        60,453
 3        10,756
-4
-5
-7
-8
-9
-10
+4	 1987
+5	 667
+6	 362
+7	 226
+8	 151
+9	 105
+10	 73
 
 =====
 Explain in your own words the conceptual differences between 
@@ -30,10 +31,18 @@ Answer these questions:
 (1) Why the results of these methods should be the same in 
 terms of changes made to the HashSet parameter.
 
+Both add words to the list, benchmark does so by first putting them into an array and benchmarkShift appends them with shiftAdd. There should be no difference in how they work since there are no duplicates in the set
+
 (2) What are the conceptual differences between the two
 benchmarking methods
+
+Both add words to the list, benchmark does so by first putting them into an array and benchmarkShift appends them with shiftAdd.
+
 
 (3) Is the total amount of memory allocated for arrays
 the same or different in the two methods? Account for
 arrays created in the methods and arrays created by
 WordGram objects. Try to be quantitative in answering.
+
+
+I would assume benchmarkShift takes up more memory since a new wordGram has to be created for every shiftAdd rather than adding to the current existing array 
